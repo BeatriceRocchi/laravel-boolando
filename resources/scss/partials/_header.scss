@@ -1,0 +1,38 @@
+header {
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-m;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 3px 5px rgba($color-black, 0.4);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                padding-right: 10px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        img {
+            height: 25px;
+        }
+
+        i {
+            padding-left: 10px;
+        }
+    }
+}
