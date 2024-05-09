@@ -24,9 +24,9 @@ return [
         "id" => 2,
         "frontImage" => "2.webp",
         "backImage" => "2b.webp",
-        "brand" => "Come Zucchero Filato",
-        "name" => "Voglia di colori pastello",
-        "price" => 129.99,
+        "brand" => "Guess",
+        "name" => "Roses Tee",
+        "price" => 20.99,
         "isInFavorites" => true,
         "badges" => [
             [
@@ -39,10 +39,10 @@ return [
         "id" => 3,
         "frontImage" => "3.webp",
         "backImage" => "3b.webp",
-        "brand" => "Guess",
-        "name" => "Roses Tee",
-        "price" => 20.99,
-        "isInFavorites" => false,
+        "brand" => "Come Zucchero Filato",
+        "name" => "Voglia di colori pastello",
+        "price" => 129.99,
+        "isInFavorites" => true,
         "badges" => [
             [
                 "type" => "discount",
@@ -50,6 +50,7 @@ return [
             ]
         ]
     ],
+
     [
         "id" => 4,
         "frontImage" => "4.webp",

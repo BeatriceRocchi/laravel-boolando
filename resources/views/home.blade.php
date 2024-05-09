@@ -4,33 +4,35 @@
     <main>
         <div class="container">
             @foreach ($products as $product)
-                <div>{{ $product['brand'] }}</div>
-                {{-- <div class="card">
+                <div class="card">
                     <div class="top-card">
-                        <img class="default-img" :src="{{Vite::assets('resources/img/$product['frontImage']')}}" :alt="{{$product['brand']}}" />
-                        <img class="hover-img" :src="{{Vite::assets('resources/img/$product['backImage']')}}" :alt="{{$product['brand']}}" />
-                        <div class="wish" :class="{ 'in-wishlist': productObject.isInFavorites }">
+                        <img class="default-img" src="{{ Vite::asset('resources/img/1.webp') }}"
+                            alt="{{ $product['brand'] }}" />
+                        <img class="hover-img" src="{{ Vite::asset('resources/img/1b.webp') }}"
+                            alt="{{ $product['brand'] }}" />
+                        <div class="{{ $product['isInFavorites'] ? 'wish in-wishlist' : 'wish' }}">
                             &hearts;
                         </div>
                         <div class="badges-box">
-                            <span v-for="(badge, index) in productObject.badges" :key="index"
-                                :class="badge.type">
-                                {{ badge . value }}</span>
+                            @foreach ($product['badges'] as $badge)
+                                <span class="{{ $badge['type'] }}">
+                                    {{ $badge['value'] }}</span>
+                            @endforeach
                         </div>
                     </div>
                     <div class="bottom-card">
-                        <div class="brand">{{ productObject . brand }}</div>
-                        <div class="product">{{ productObject . name }}</div>
+                        <div class="brand">{{ $product['brand'] }}</div>
+                        <div class="product">{{ $product['name'] }}</div>
                         <div>
-                            <span v-if="calcSalesPrice()" class="discounted-price">{{ calcSalesPrice() }} &euro;
-                            </span>
-                            <span class="full-price" :class="{ strike: calcSalesPrice() }">
-                                {{ productObject . price }} &euro;</span>
+                            {{-- TODO: aggiungere funzione calcolo prezzo e classe sbarrata sul prezzo pieno --}}
+                            {{-- <span v-if="calcSalesPrice()" class="discounted-price">{{ calcSalesPrice() }} &euro;
+                            </span> --}}
+                            <span class="full-price">
+                                {{ $product['price'] }} &euro;</span>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             @endforeach
-
         </div>
     </main>
 @endsection
