@@ -17,12 +17,15 @@ header {
         .menu {
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
             li {
                 padding-right: 10px;
 
-                &:hover {
+                &:hover,
+                a.active {
                     text-decoration: underline;
+                    cursor: pointer;
                 }
             }
         }

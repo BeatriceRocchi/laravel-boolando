@@ -3,16 +3,20 @@
         <nav>
             <ul class="menu">
                 <li>
-                    <a href="{{ route('home') }}">Home</a>
+                    <a class="{{ Route::currentRouteName() === 'home' ? 'active' : '' }}"
+                        href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
-                    <a href="{{ route('woman') }}">Donna</a>
+                    <a class="{{ Route::currentRouteName() === 'woman' ? 'active' : '' }}"
+                        href="{{ route('woman') }}">Donna</a>
                 </li>
                 <li>
-                    <a href="{{ route('man') }}">Uomo</a>
+                    <a class="{{ Route::currentRouteName() === 'man' ? 'active' : '' }}"
+                        href="{{ route('man') }}">Uomo</a>
                 </li>
                 <li>
-                    <a href="{{ route('child') }}">Bambino</a>
+                    <a class="{{ Route::currentRouteName() === 'child' ? 'active' : '' }}"
+                        href="{{ route('child') }}">Bambino</a>
                 </li>
             </ul>
         </nav>
