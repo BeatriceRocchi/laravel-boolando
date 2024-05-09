@@ -1,9 +1,10 @@
 <?php
 function calcSalesPrice($product)
 {
-    $salesPrice = $product['price'];
+    $salesPrice = 0;
     foreach ($product['badges'] as $badge) {
         if ($badge['type'] === 'discount') {
+            $salesPrice = $product['price'];
             $salesPrice *= 1 - abs(floatval($badge['value'])) / 100;
         }
     }
@@ -39,9 +40,11 @@ function calcSalesPrice($product)
                         <div class="brand">{{ $product['brand'] }}</div>
                         <div class="product">{{ $product['name'] }}</div>
                         <div>
-                            <span v-if="calcSalesPrice()" class="discounted-price">{{ calcSalesPrice($product) }} &euro;
-                            </span>
-                            <span class="full-price">
+                            @if (calcSalesPrice($product))
+                                <span class="discounted-price">{{ calcSalesPrice($product) }} &euro;
+                                </span>
+                            @endif
+                            <span class="{{ calcSalesPrice($product) ? 'strike full-price' : 'full-price' }}">
                                 {{ $product['price'] }} &euro;</span>
                         </div>
                     </div>
