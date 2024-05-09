@@ -1,0 +1,33 @@
+footer {
+    background-color: $color-secondary;
+    font-size: $font-m;
+    color: $color-white;
+    padding: 20px 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .references {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 8px;
+
+            li {
+                margin-right: 10px;
+                font-size: $font-xs;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .icons i {
+            margin-right: 6px;
+            font-size: $font-l;
+            padding-top: 8px;
+        }
+    }
+}
