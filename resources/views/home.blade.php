@@ -1,3 +1,17 @@
+<?php
+function calcSalesPrice($product)
+{
+    $salesPrice = $product['price'];
+    foreach ($product['badges'] as $badge) {
+        if ($badge['type'] === 'discount') {
+            $salesPrice *= 1 - abs(floatval($badge['value'])) / 100;
+        }
+    }
+
+    return $salesPrice ? number_format($salesPrice, 2) : null;
+}
+?>
+
 @extends('layouts.main')
 
 @section('content')
@@ -25,9 +39,8 @@
                         <div class="brand">{{ $product['brand'] }}</div>
                         <div class="product">{{ $product['name'] }}</div>
                         <div>
-                            {{-- TODO: aggiungere funzione calcolo prezzo e classe sbarrata sul prezzo pieno --}}
-                            {{-- <span v-if="calcSalesPrice()" class="discounted-price">{{ calcSalesPrice() }} &euro;
-                            </span> --}}
+                            <span v-if="calcSalesPrice()" class="discounted-price">{{ calcSalesPrice($product) }} &euro;
+                            </span>
                             <span class="full-price">
                                 {{ $product['price'] }} &euro;</span>
                         </div>
