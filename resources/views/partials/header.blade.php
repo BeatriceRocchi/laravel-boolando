@@ -1,6 +1,5 @@
 @php
     $header_menu = config('menues.header');
-
 @endphp
 
 <header>
