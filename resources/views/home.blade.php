@@ -6,9 +6,10 @@
             @foreach ($products as $product)
                 <div class="card">
                     <div class="top-card">
-                        <img class="default-img" src="{{ Vite::asset('resources/img/1.webp') }}"
+
+                        <img class="default-img" src="{{ Vite::asset('resources/img/' . $product['frontImage']) }}"
                             alt="{{ $product['brand'] }}" />
-                        <img class="hover-img" src="{{ Vite::asset('resources/img/1b.webp') }}"
+                        <img class="hover-img" src="{{ Vite::asset('resources/img/' . $product['backImage']) }}"
                             alt="{{ $product['brand'] }}" />
                         <div class="{{ $product['isInFavorites'] ? 'wish in-wishlist' : 'wish' }}">
                             &hearts;

@@ -42,7 +42,7 @@ return [
         "brand" => "Come Zucchero Filato",
         "name" => "Voglia di colori pastello",
         "price" => 129.99,
-        "isInFavorites" => true,
+        "isInFavorites" => false,
         "badges" => [
             [
                 "type" => "discount",
