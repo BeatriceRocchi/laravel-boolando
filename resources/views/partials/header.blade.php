@@ -3,13 +3,16 @@
         <nav>
             <ul class="menu">
                 <li>
-                    <a href="#">Donna</a>
+                    <a href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
-                    <a href="#">Uomo</a>
+                    <a href="{{ route('woman') }}">Donna</a>
                 </li>
                 <li>
-                    <a href="#">Bambino</a>
+                    <a href="{{ route('man') }}">Uomo</a>
+                </li>
+                <li>
+                    <a href="{{ route('child') }}">Bambino</a>
                 </li>
             </ul>
         </nav>
