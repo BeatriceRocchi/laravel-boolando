@@ -1,17 +1,17 @@
-<?php
-function calcSalesPrice($product)
-{
-    $salesPrice = 0;
-    foreach ($product['badges'] as $badge) {
-        if ($badge['type'] === 'discount') {
-            $salesPrice = $product['price'];
-            $salesPrice *= 1 - abs(floatval($badge['value'])) / 100;
+@php
+    function calcSalesPrice($product)
+    {
+        $salesPrice = 0;
+        foreach ($product['badges'] as $badge) {
+            if ($badge['type'] === 'discount') {
+                $salesPrice = $product['price'];
+                $salesPrice *= 1 - abs(floatval($badge['value'])) / 100;
+            }
         }
-    }
 
-    return $salesPrice ? number_format($salesPrice, 2) : null;
-}
-?>
+        return $salesPrice ? number_format($salesPrice, 2) : null;
+    }
+@endphp
 
 @extends('layouts.main')
 

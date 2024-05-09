@@ -1,23 +1,18 @@
+@php
+    $header_menu = config('menues.header');
+
+@endphp
+
 <header>
     <div class="container">
         <nav>
             <ul class="menu">
-                <li>
-                    <a class="{{ Route::currentRouteName() === 'home' ? 'active' : '' }}"
-                        href="{{ route('home') }}">Home</a>
-                </li>
-                <li>
-                    <a class="{{ Route::currentRouteName() === 'woman' ? 'active' : '' }}"
-                        href="{{ route('woman') }}">Donna</a>
-                </li>
-                <li>
-                    <a class="{{ Route::currentRouteName() === 'man' ? 'active' : '' }}"
-                        href="{{ route('man') }}">Uomo</a>
-                </li>
-                <li>
-                    <a class="{{ Route::currentRouteName() === 'child' ? 'active' : '' }}"
-                        href="{{ route('child') }}">Bambino</a>
-                </li>
+                @foreach ($header_menu as $item)
+                    <li>
+                        <a class="{{ Route::currentRouteName() === $item['name'] ? 'active' : '' }}"
+                            href="{{ route($item['name']) }}">{{ $item['text'] }}</a>
+                    </li>
+                @endforeach
             </ul>
         </nav>
         <img src="/img/boolean-logo.png" alt="Logo boolean" />
